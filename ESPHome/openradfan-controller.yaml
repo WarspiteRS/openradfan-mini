@@ -1,0 +1,395 @@
+substitutions:
+  device_name: "openradfan"
+  room_name: "home"
+  device_name_friendly: "OpenRadFan"
+  room_name_friendly: "Home"
+  time_zone: "Europe/London"
+  control_temp_min: "20"
+  control_temp_max: "35"
+  
+# Add the global variable declaration
+globals:
+  - id: enforce_temp_constraints_ptr
+    type: std::function<void(float, int)>
+  - id: calculate_curve_speed_ptr
+    type: std::function<void(float)>
+
+esphome:
+  name: "${device_name}-${room_name}"
+  friendly_name: "${device_name_friendly} ${room_name_friendly}"
+  name_add_mac_suffix: true
+  project:
+    name: esphome.openradfan-controller
+    version: "1.1"
+  on_boot:
+    then:
+      # These functions calculate the current Fan Curve Speed and also enforce constraints on the inputs,
+      # i.e. increasing temperature points
+      - lambda: |-
+          // Helper function to enforce temperature constraints
+          auto enforce_temp_constraints = [](float new_value, int index) -> void {
+            std::vector<template_::TemplateNumber*> temps;
+            temps.push_back(id(curve_temp_1));
+            temps.push_back(id(curve_temp_2));
+            temps.push_back(id(curve_temp_3));
+            temps.push_back(id(curve_temp_4));
+            temps.push_back(id(curve_temp_5));
+            
+            // Set the new value for the changed temperature
+            temps[index]->publish_state(new_value);
+            
+            // Propagate up if necessary (ensure following temps are not lower)
+            for (int i = index + 1; i < temps.size(); i++) {
+              if (temps[i]->state < new_value) {
+                temps[i]->publish_state(new_value);
+              }
+            }
+            
+            // Propagate down if necessary (ensure preceding temps are not higher)
+            for (int i = index - 1; i >= 0; i--) {
+              if (temps[i]->state > new_value) {
+                temps[i]->publish_state(new_value);
+              }
+            }
+          };
+          
+          // Store the function globally so we can access it in number components
+          id(enforce_temp_constraints_ptr) = enforce_temp_constraints;
+
+          // Helper function to calculate current curve speed
+          auto calculate_curve_speed = [](float current_temp) -> void {
+            std::vector<template_::TemplateNumber*> temps;
+            temps.push_back(id(curve_temp_1));
+            temps.push_back(id(curve_temp_2));
+            temps.push_back(id(curve_temp_3));
+            temps.push_back(id(curve_temp_4));
+            temps.push_back(id(curve_temp_5));
+            
+            std::vector<template_::TemplateNumber*> speeds;
+            speeds.push_back(id(curve_speed_1));
+            speeds.push_back(id(curve_speed_2));
+            speeds.push_back(id(curve_speed_3));
+            speeds.push_back(id(curve_speed_4));
+            speeds.push_back(id(curve_speed_5));
+            
+            // Find the temperature segment
+            for (int i = 0; i < temps.size() - 1; i++) {
+              float temp1 = temps[i]->state;
+              float temp2 = temps[i + 1]->state;
+              
+              if (current_temp >= temp1 && current_temp <= temp2) {
+                // Linear interpolation between speed points
+                float speed1 = speeds[i]->state;
+                float speed2 = speeds[i + 1]->state;
+                float t = (current_temp - temp1) / (temp2 - temp1);
+                float current_speed = speed1 + t * (speed2 - speed1);
+                
+                id(current_curve_speed)->publish_state(current_speed);
+                return;
+              }
+            }
+            
+            // Handle temperature outside the curve
+            if (current_temp < temps[0]->state) {
+              id(current_curve_speed)->publish_state(speeds[0]->state);
+            } else {
+              id(current_curve_speed)->publish_state(speeds[speeds.size()-1]->state);
+            }
+          };
+          
+          // Store the function globally
+          id(calculate_curve_speed_ptr) = calculate_curve_speed;
+
+# ESP32 platform to use
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# To be able to get logs from the device via serial and api.
+logger:
+
+# API is a requirement of the dashboard import.
+api:
+
+# OTA is required for Over-the-Air updating
+ota:
+  - platform: esphome
+
+wifi:
+  # Set up a wifi access point
+  ap:
+    password: "OpenRadFan"
+
+# In combination with the `ap` this allows the user
+# to provision wifi credentials to the device.
+captive_portal:
+
+# Sets up Bluetooth LE (Only on ESP32) to allow the user
+# to provision wifi credentials to the device.
+esp32_improv:
+  authorizer: none
+
+# Web server to allow control also without Home Assistant
+web_server:
+  port: 80
+
+# Time sync without Home Assistant
+# For future use with schedules
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: ${time_zone}
+
+### Main control logic starts here ###
+### Fan PWM control & RPM measurements ###
+
+# DS18B20 OneWire Protocol for temperature probe(s)
+one_wire:
+  - platform: gpio
+    pin: GPIO22
+
+switch:
+  # Global On/Off switch (BTS462). Not exposed, will be used to turn off fans at 0 speed
+  - platform: gpio
+    pin: GPIO21
+    name: "Fan Power"
+    id: fan_power
+    internal: true
+  # Switch to enable automatic fan curve control
+  - platform: template
+    name: "Auto Fan Curve Control"
+    id: fan_curve_control
+    restore_mode: "ALWAYS_OFF" # "RESTORE_DEFAULT_ON" - left off for now
+    optimistic: true
+
+
+# PWM driving of the two channels at 25 kHz
+output:
+  - platform: ledc
+    pin: GPIO33
+    frequency: 25000
+    id: fan_speed_1
+    min_power: 0%
+    zero_means_zero: True
+  - platform: ledc
+    pin: GPIO25
+    frequency: 25000
+    id: fan_speed_2
+    min_power: 0%
+    zero_means_zero: True
+
+# Both fan channels are merged for simplicity
+# Fan 1 is exposed and Fan 2 just mirrors its speed
+# When speed is set to 0, also turn off the power to the fans,
+# as many fans do not support stopping at 0 PWM signal
+
+fan:
+  - platform: speed
+    output: fan_speed_1
+    id: fan_1
+    name: "Fan Speed"
+    restore_mode: ALWAYS_OFF
+    on_turn_on:
+      then:
+        - switch.turn_on: fan_power
+    on_turn_off:
+      then:
+        - switch.turn_off: fan_power
+    on_speed_set:
+      then:
+        - lambda: |-
+            auto call = id(fan_2).turn_on();
+            call.set_speed(x);
+            call.perform();
+  - platform: speed
+    output: fan_speed_2
+    id: fan_2
+    name: "Fan Speed"
+    restore_mode: ALWAYS_OFF
+    internal: true 
+
+# Sensor definitions
+sensor:
+  # Pulse counters for fan speed detection
+  - platform: pulse_counter
+    pin: 
+      number: GPIO23
+      mode: INPUT_PULLUP
+    unit_of_measurement: 'RPM'
+    id: fan_rpm_2
+    name: "Fan 2 RPM"
+    update_interval: 1s
+    accuracy_decimals: 0
+    filters:
+      - multiply: 0.5
+  - platform: pulse_counter
+    pin: 
+      number: GPIO19
+      mode: INPUT_PULLUP
+    unit_of_measurement: 'RPM'
+    id: fan_rpm_1
+    name: "Fan 1 RPM"
+    update_interval: 1s
+    accuracy_decimals: 0
+    filters:
+      - multiply: 0.5
+
+  # Temperature sensor. If more than 1 is connected,
+  # their unique device IDs need to be provided
+  - platform: dallas_temp
+    update_interval: 1s
+    name: "Temperature 1"
+    id: temperature_ds18b20_1
+    unit_of_measurement: "°C"
+    device_class: temperature
+    state_class: measurement
+    #address: 0xputyouraddresshere
+    accuracy_decimals: 3
+    resolution: 12
+    filters:
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 10
+
+# Define the temperature curve variables (number)
+number:
+  - platform: template
+    name: "Curve T 1"
+    id: "curve_temp_1"
+    optimistic: true
+    min_value: ${control_temp_min}
+    max_value: ${control_temp_max}
+    step: 1
+    set_action:
+      then:
+        - lambda: |-
+            id(enforce_temp_constraints_ptr)(x, 0);
+            
+  - platform: template
+    name: "Curve T 2"
+    id: "curve_temp_2"
+    optimistic: true
+    min_value: ${control_temp_min}
+    max_value: ${control_temp_max}
+    restore_value: true
+    step: 1
+    set_action:
+      then:
+        - lambda: |-
+            id(enforce_temp_constraints_ptr)(x, 1);
+            
+  - platform: template
+    name: "Curve T 3"
+    id: "curve_temp_3"
+    optimistic: true
+    min_value: ${control_temp_min}
+    max_value: ${control_temp_max}
+    step: 1
+    set_action:
+      then:
+        - lambda: |-
+            id(enforce_temp_constraints_ptr)(x, 2);
+            
+  - platform: template
+    name: "Curve T 4"
+    id: "curve_temp_4"
+    optimistic: true
+    min_value: ${control_temp_min}
+    max_value: ${control_temp_max}
+    step: 1
+    set_action:
+      then:
+        - lambda: |-
+            id(enforce_temp_constraints_ptr)(x, 3);
+            
+  - platform: template
+    name: "Curve T 5"
+    id: "curve_temp_5"
+    optimistic: true
+    min_value: ${control_temp_min}
+    max_value: ${control_temp_max}
+    step: 1
+    set_action:
+      then:
+        - lambda: |-
+            id(enforce_temp_constraints_ptr)(x, 4);
+            
+  - platform: template
+    name: "Curve Speed 1"
+    id: "curve_speed_1"
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    restore_value: true
+    step: 1
+  - platform: template
+    name: "Curve Speed 2"
+    id: "curve_speed_2"
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    restore_value: true
+    step: 1
+  - platform: template
+    name: "Curve Speed 3"
+    id: "curve_speed_3"
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    restore_value: true
+    step: 1
+  - platform: template
+    name: "Curve Speed 4"
+    id: "curve_speed_4"
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    restore_value: true
+    step: 1
+  - platform: template
+    name: "Curve Speed 5"
+    id: "curve_speed_5"
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    restore_value: true
+    step: 1
+  - platform: template
+    name: "Current Curve Speed"
+    id: "current_curve_speed"
+    min_value: 0
+    max_value: 100
+    step: 1
+    optimistic: true
+    restore_value: false
+    internal: True
+
+# Update fan curve regularly
+interval:
+  - interval: 10s
+    then:
+      - lambda: |-
+          if (id(fan_curve_control)->state && id(temperature_ds18b20_1)->has_state()) {
+            // Only proceed if auto control is enabled and temp sensor has valid reading
+            id(calculate_curve_speed_ptr)(id(temperature_ds18b20_1)->state);
+            
+            // Get calculated speed and set fans
+            float speed = id(current_curve_speed)->state;
+            
+            // Turn fans on/off based on speed
+            if (speed > 0) {
+              // Turn on fan 1 with calculated speed
+              auto call1 = id(fan_1).turn_on();
+              call1.set_speed(speed);
+              call1.perform();
+              
+              // Fan 2 will automatically follow fan 1 due to existing on_speed_set configuration
+            } else {
+              // Turn off both fans if speed is 0
+              auto call1 = id(fan_1).turn_off();
+              call1.set_speed(0.0);
+              call1.perform();
+              // Fan 2 will turn off automatically as it is linked to Fan 1
+            }
+          }
