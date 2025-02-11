@@ -12,7 +12,7 @@ globals:
   - id: calculate_curve_speed_ptr
     type: std::function<void(float)>
 
-esphome:00000000
+esphome:
   name: "${device_name}"
   friendly_name: "${device_name_friendly}"
   name_add_mac_suffix: true
