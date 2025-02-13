@@ -36,7 +36,7 @@ An ESPHome-driven smart controller for 12V PWM fans.
 </p>
 8. Home Assistant should automatically detect the device
 9. You can adopt it in your local ESPHome environment. The full yaml code will be fethed from GitHub when you do so, so you can adapt the config if needed.
-10. The web interface gives you full control over all aspects of the device.
+10. The web interface gives you full control over all aspects of the device. Over-the-air (OTA) updates can also be uploaded and flashed to the device.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1e55764f-4089-4b22-83b6-d40f70c72b3f" width="200">
 </p>
