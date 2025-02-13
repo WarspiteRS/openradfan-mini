@@ -1,7 +1,13 @@
 # OpenRadFan
 An ESPHome-driven smart controller for 12V PWM fans.
 
-<img src="https://github.com/user-attachments/assets/cd845684-3123-46c8-9f42-816dddf3bfc0" width="400">
+Classical radiators (K2/K3) typically require relatively high flow temperatures to heat up a room. Using forced convection can significally enhance their efficiency, especially at low flow temperatures. While there are a number of commercial solutions available, these did not need my needs. They are either too loud while running or switching on/off using a relais, don't properly switch at low flow temperatures, are too expensive or simply not powerful enough. Hence, I set out to build my own solution using standard 120/140mm PWM-capable PC fans. High-end fans run at low speeds (<500 RMP) are essentially inaudible and provide a definite boost to the room temperature. Being able to smartly control the fan speed and integrate them into Home Assistant - while not a must - is definitely very nice to have if you want to control fan speed based on time of day, current room temperature or room occupancy. 
+
+Using these device throughout our house, we can run out heat pump at flow temperatures typically reserved for good underfloor heating setups (Vaillant heat curve at 0.25 - 30°C flow temperature at 0°C, 35°C flow temperature at -10°C).
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cd845684-3123-46c8-9f42-816dddf3bfc0" width="400">
+</p>
 
 ## Features
 ### Hardware
