@@ -24,6 +24,7 @@ An ESPHome-driven smart controller for 12V PWM fans.
 1. Compile & flash ESPHome firmware on the Atom Lite using USB. Skip this step if you have a pre-flashed controller.
 2. Connect DS18B20 to the push-in terminal blocks. The wire designations are marked on the PCB and are (from left to right): +3.3V, Data, GND. It's easiest to insert them all at the same time. Hold the wires in one hand in the correct order and insert them into the terminal. Then push all orange levers down at the same time and push the wires down as far as possible. The levers should almost return to the initial position and not be stuck halfway down. 
 <img src="https://github.com/user-attachments/assets/6230d223-b83f-4b30-ab6f-a8feb23dc519" width="400">
+
 3. Plug in the Atom Lite controller module and fans.
 4. Lastly, plug in the barrel plug to power the device
 5. On first boot, the device will present a hotspot named "openradfan-xxxxxx", with xxxxxx being the last characters of the Atom Lite's MAC address. You can connect to it in order to enter your WiFi credentials. The passwort for the hotspot is "OpenRadFan". If you get a warning that the hotspot does not provide an internet connection, click "Yes" when asked to connect anyways. Then, point your browser to http://192.168.4.1 to open the config page.
