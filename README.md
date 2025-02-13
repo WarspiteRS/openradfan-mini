@@ -21,7 +21,7 @@ An ESPHome-driven smart controller for 12V PWM fans.
 
 ## Set-up instructions
 **Don't connect to USB when the Atom lite is plugged into the PCB - there is no mechanism to block voltages between the included buck converter and the computer.**
-1. Compile & flash ESPHome firmware on the Atom Lite using USB. Skip this step if you have a pre-flashed controller.
+1. Compile & flash ESPHome firmware on the Atom Lite using USB. Skip this step if you have a pre-flashed controller. The ESPHome directory on GitHub contains the yaml as well as factory & ota images so you can directly flash this without a local ESPHome compiler set up.
 2. Connect DS18B20 to the push-in terminal blocks. The wire designations are marked on the PCB and are (from left to right): +3.3V, Data, GND. It's easiest to insert them all at the same time. Hold the wires in one hand in the correct order and insert them into the terminal. Then push all orange levers down at the same time and push the wires down as far as possible. The levers should almost return to the initial position and not be stuck halfway down. If you want to use more than one sensor, you need to manually edit the ESPHome yaml and include the individual IDs of the DS18B20s.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6230d223-b83f-4b30-ab6f-a8feb23dc519" width="300">
