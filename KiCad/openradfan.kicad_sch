@@ -769,168 +769,6 @@
 				)
 			)
 		)
-		(symbol "Diode:1N4148W"
-			(pin_numbers hide)
-			(pin_names hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "1N4148W"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Diode_SMD:D_SOD-123"
-				(at 0 -4.445 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "75V 0.15A Fast Switching Diode, SOD-123"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "D"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=K 2=A"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "diode"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "D*SOD?123*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "1N4148W_0_1"
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "1N4148W_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Diode:SS16"
 			(pin_numbers hide)
 			(pin_names
@@ -3186,6 +3024,149 @@
 				)
 			)
 		)
+		(symbol "easyeda2kicad:BAT54WS_C7502694"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BAT54WS_C7502694"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:SOD-323_L1.7-W1.3-LS2.6-RD-1"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C7502694"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BAT54WS_C7502694_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.78) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.78 1.27) (xy -1.78 1.78) (xy -1.27 1.78) (xy -1.27 -1.78) (xy -0.76 -1.78) (xy -0.76 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "easyeda2kicad:DB141V-2.54-3P"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3992,7 +3973,7 @@
 				)
 			)
 		)
-		(symbol "easyeda2kicad:MM3Z10VT1G"
+		(symbol "easyeda2kicad:MMSZ4696T1G"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4004,7 +3985,7 @@
 					)
 				)
 			)
-			(property "Value" "MM3Z10VT1G"
+			(property "Value" "MMSZ4696T1G"
 				(at 0 -5.08 0)
 				(effects
 					(font
@@ -4012,7 +3993,7 @@
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:SOD-323_L1.8-W1.3-LS2.5-RD"
+			(property "Footprint" "easyeda2kicad:SOD-123_L2.7-W1.6-LS3.7-RD-1"
 				(at 0 -7.62 0)
 				(effects
 					(font
@@ -4021,7 +4002,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Zener-Diodes_ON_MM3Z10VT1G_MM3Z10VT1G_C39057.html"
+			(property "Datasheet" "https://lcsc.com/product-detail/Zener-Diodes_ON-Semicon-ON-MMSZ4696T1G_C462868.html"
 				(at 0 -10.16 0)
 				(effects
 					(font
@@ -4039,7 +4020,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC Part" "C39057"
+			(property "LCSC Part" "C462868"
 				(at 0 -12.7 0)
 				(effects
 					(font
@@ -4048,10 +4029,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "MM3Z10VT1G_0_1"
+			(symbol "MMSZ4696T1G_0_1"
 				(polyline
 					(pts
-						(xy -2.54 2.29) (xy -1.52 1.27) (xy -1.52 -1.27) (xy -0.51 -2.29)
+						(xy -2.29 2.29) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.25 -2.29)
 					)
 					(stroke
 						(width 0)
@@ -4063,7 +4044,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 1.52) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.52)
+						(xy 1.27 -1.52) (xy -1.27 0) (xy 1.27 1.78) (xy 1.27 -1.52)
 					)
 					(stroke
 						(width 0)
@@ -4095,6 +4076,267 @@
 					(at 5.08 0 180)
 					(length 3.81)
 					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "easyeda2kicad:SMD1812B260TF_16"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMD1812B260TF/16"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:F1812"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Others_Brightking-Elec-TAIWAN-SMD1812B260TF-16_C269148.html"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C269148"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMD1812B260TF_16_0_1"
+				(rectangle
+					(start -3.3 0.76)
+					(end 3.3 -0.76)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "easyeda2kicad:SMF14CA_C1851346"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SMF14CA_C1851346"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:SOD-123_L2.8-W1.8-LS3.7-BI"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C1851346"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SMF14CA_C1851346_0_1"
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.78) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.78 1.27) (xy -1.78 1.78) (xy -1.27 1.78) (xy -1.27 -1.78) (xy -0.76 -1.78) (xy -0.76 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4924,12 +5166,6 @@
 		(uuid "2a57753c-01ca-44ba-a996-5f4fa1c46a56")
 	)
 	(junction
-		(at 36.83 158.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4918cacd-50cf-42e6-b176-6be60836a875")
-	)
-	(junction
 		(at 234.95 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4946,6 +5182,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5f37f1cf-5749-4fe9-ac1d-2580408f7aed")
+	)
+	(junction
+		(at 36.83 158.75)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62013155-ea6a-4154-869d-50d212cd6977")
 	)
 	(junction
 		(at 270.51 104.14)
@@ -4972,22 +5214,22 @@
 		(uuid "935a98a1-0158-4104-99fa-e94574d6f5af")
 	)
 	(junction
-		(at 46.99 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "955e2221-da92-4ef4-8d8b-426daadc14ed")
-	)
-	(junction
 		(at 217.17 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "98c7a94c-8b59-4ca2-b4cd-d95bff83c8a0")
 	)
 	(junction
-		(at 92.71 40.64)
+		(at 50.8 40.64)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b400de0f-bd7b-4173-a292-b9ed741c2131")
+		(uuid "9d52e33e-d10d-431a-8c66-f7771ee7dd49")
+	)
+	(junction
+		(at 46.99 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ae9795bd-5956-43c7-a7d7-d58690c48a46")
 	)
 	(junction
 		(at 38.1 195.58)
@@ -5026,10 +5268,16 @@
 		(uuid "dc29224d-3e91-4660-baa1-a92ca6149465")
 	)
 	(junction
-		(at 311.15 106.68)
+		(at 304.8 106.68)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb17b5d6-0baa-4fa8-bab2-c5fab573e1cc")
+	)
+	(junction
+		(at 92.71 40.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ec587ae7-c7e8-4215-a81a-5b527f4bc38d")
 	)
 	(junction
 		(at 68.58 101.6)
@@ -5131,16 +5379,6 @@
 	)
 	(wire
 		(pts
-			(xy 80.01 40.64) (xy 92.71 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0de01c88-f5ca-4a9a-a14b-7393363a210a")
-	)
-	(wire
-		(pts
 			(xy 199.39 50.8) (xy 204.47 50.8)
 		)
 		(stroke
@@ -5158,6 +5396,16 @@
 			(type default)
 		)
 		(uuid "12c39ade-7507-4454-8f4b-4b0321c3797a")
+	)
+	(wire
+		(pts
+			(xy 46.99 40.64) (xy 50.8 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "137bfdc9-a040-427c-8ee3-ce10d92b6bda")
 	)
 	(wire
 		(pts
@@ -5281,6 +5529,16 @@
 	)
 	(wire
 		(pts
+			(xy 62.23 40.64) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bfcbd8c-cf6c-40f4-bbd0-608d4880fe1a")
+	)
+	(wire
+		(pts
 			(xy 104.14 162.56) (xy 106.68 162.56)
 		)
 		(stroke
@@ -5358,16 +5616,6 @@
 			(type default)
 		)
 		(uuid "34f43220-fac4-4fc9-a89f-c1f0319a2590")
-	)
-	(wire
-		(pts
-			(xy 49.53 158.75) (xy 58.42 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35f53275-c1b7-4387-bf76-8b19346fc7d0")
 	)
 	(wire
 		(pts
@@ -5491,6 +5739,16 @@
 	)
 	(wire
 		(pts
+			(xy 304.8 106.68) (xy 304.8 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45a6bafd-35c6-4535-bf7d-b20afcca7c63")
+	)
+	(wire
+		(pts
 			(xy 204.47 165.1) (xy 204.47 167.64)
 		)
 		(stroke
@@ -5521,6 +5779,26 @@
 	)
 	(wire
 		(pts
+			(xy 92.71 40.64) (xy 109.22 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fccfe5a-b1e3-4929-9f45-01f787dccb8e")
+	)
+	(wire
+		(pts
+			(xy 50.8 40.64) (xy 52.07 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50cdbc62-1952-4b11-b2a5-5117d083d79a")
+	)
+	(wire
+		(pts
 			(xy 237.49 39.37) (xy 237.49 43.18)
 		)
 		(stroke
@@ -5528,6 +5806,26 @@
 			(type default)
 		)
 		(uuid "5471afdd-e2a9-4698-a080-124741c8dbd1")
+	)
+	(wire
+		(pts
+			(xy 52.07 195.58) (xy 58.42 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57187967-5e9f-44e4-bec0-4e236d8256c6")
+	)
+	(wire
+		(pts
+			(xy 50.8 40.64) (xy 50.8 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59a75be1-48e4-44a7-afee-c1e5419e3c65")
 	)
 	(wire
 		(pts
@@ -5721,16 +6019,6 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 158.75) (xy 41.91 158.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "765959ab-9aa5-4edf-abc1-bdca8d7c9312")
-	)
-	(wire
-		(pts
 			(xy 297.18 58.42) (xy 304.8 58.42)
 		)
 		(stroke
@@ -5778,16 +6066,6 @@
 			(type default)
 		)
 		(uuid "7c1d297f-2e6b-4b60-992f-934566de2509")
-	)
-	(wire
-		(pts
-			(xy 46.99 40.64) (xy 69.85 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7fa219e3-663c-4603-b619-6d7988b30487")
 	)
 	(wire
 		(pts
@@ -5871,6 +6149,16 @@
 	)
 	(wire
 		(pts
+			(xy 36.83 158.75) (xy 40.64 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c8266d0-b8ea-434c-ab85-83a0a5f19dd6")
+	)
+	(wire
+		(pts
 			(xy 194.31 198.12) (xy 196.85 198.12)
 		)
 		(stroke
@@ -5898,6 +6186,16 @@
 			(type default)
 		)
 		(uuid "8f5918d2-b0c9-469b-9091-19d9f6c30f59")
+	)
+	(wire
+		(pts
+			(xy 50.8 158.75) (xy 58.42 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fc124c5-cf11-4ab8-a392-2ad62f5f1d97")
 	)
 	(wire
 		(pts
@@ -6001,7 +6299,7 @@
 	)
 	(wire
 		(pts
-			(xy 318.77 113.03) (xy 318.77 114.3)
+			(xy 312.42 113.03) (xy 312.42 116.84)
 		)
 		(stroke
 			(width 0)
@@ -6048,6 +6346,16 @@
 			(type default)
 		)
 		(uuid "a420cf2a-6396-4b24-b199-4fff91ac9b1c")
+	)
+	(wire
+		(pts
+			(xy 50.8 55.88) (xy 50.8 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5b4e60f-5bc1-4a31-906c-894c0f5e6574")
 	)
 	(wire
 		(pts
@@ -6131,16 +6439,6 @@
 	)
 	(wire
 		(pts
-			(xy 311.15 101.6) (xy 311.15 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4be1f7c-6f5a-4486-9bf4-642233473509")
-	)
-	(wire
-		(pts
 			(xy 194.31 91.44) (xy 194.31 99.06)
 		)
 		(stroke
@@ -6191,7 +6489,7 @@
 	)
 	(wire
 		(pts
-			(xy 326.39 106.68) (xy 328.93 106.68)
+			(xy 320.04 106.68) (xy 322.58 106.68)
 		)
 		(stroke
 			(width 0)
@@ -6291,7 +6589,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 40.64) (xy 109.22 40.64)
+			(xy 80.01 40.64) (xy 92.71 40.64)
 		)
 		(stroke
 			(width 0)
@@ -6351,7 +6649,7 @@
 	)
 	(wire
 		(pts
-			(xy 311.15 88.9) (xy 311.15 93.98)
+			(xy 304.8 116.84) (xy 304.8 115.57)
 		)
 		(stroke
 			(width 0)
@@ -6361,7 +6659,7 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 106.68) (xy 311.15 106.68)
+			(xy 303.53 106.68) (xy 304.8 106.68)
 		)
 		(stroke
 			(width 0)
@@ -6388,16 +6686,6 @@
 			(type default)
 		)
 		(uuid "e3a167af-9ae4-4825-8909-8a8b3724de57")
-	)
-	(wire
-		(pts
-			(xy 49.53 195.58) (xy 58.42 195.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4074d93-f6d1-46b1-a09f-8aaccd6edb3b")
 	)
 	(wire
 		(pts
@@ -7071,7 +7359,7 @@
 	)
 	(global_label "GPIO_MOSFET"
 		(shape input)
-		(at 309.88 106.68 180)
+		(at 303.53 106.68 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7081,7 +7369,7 @@
 		)
 		(uuid "45ad31a4-664c-4970-9759-f71aef3b9e42")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 294.2553 106.68 0)
+			(at 287.9053 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7093,7 +7381,7 @@
 	)
 	(global_label "MOSFET_BUF"
 		(shape output)
-		(at 328.93 106.68 0)
+		(at 322.58 106.68 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7103,7 +7391,7 @@
 		)
 		(uuid "5934838f-42a8-4ea7-a1f2-9832bb9111ed")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 343.7685 106.68 0)
+			(at 337.4185 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7919,6 +8207,85 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:MMSZ4696T1G")
+		(at 92.71 45.72 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "11fb1672-f8aa-43fa-8a3e-8d06878d83a3")
+		(property "Reference" "D4"
+			(at 96.52 43.9399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MMSZ4696T1G"
+			(at 96.52 46.4799 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:SOD-123_L2.7-W1.6-LS3.7-RD-1"
+			(at 85.09 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Zener-Diodes_ON-Semicon-ON-MMSZ4696T1G_C462868.html"
+			(at 82.55 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 92.71 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C462868"
+			(at 80.01 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "001da95c-90d4-4f44-905c-cfa9de34c478")
+		)
+		(pin "1"
+			(uuid "a374eac2-bc99-412b-973a-d13cc2db0a75")
+		)
+		(instances
+			(project ""
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 66.04 167.64 0)
 		(unit 1)
@@ -8723,7 +9090,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 318.77 114.3 0)
+		(at 312.42 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8732,7 +9099,7 @@
 		(fields_autoplaced yes)
 		(uuid "20b9c5e2-605a-4b13-999d-21ab54790fc8")
 		(property "Reference" "#PWR09"
-			(at 318.77 120.65 0)
+			(at 312.42 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8741,7 +9108,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 318.77 119.38 0)
+			(at 312.42 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8749,7 +9116,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 318.77 114.3 0)
+			(at 312.42 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8758,7 +9125,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 114.3 0)
+			(at 312.42 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8767,7 +9134,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 318.77 114.3 0)
+			(at 312.42 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9163,7 +9530,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 311.15 97.79 0)
+		(at 304.8 111.76 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9171,7 +9538,7 @@
 		(dnp no)
 		(uuid "2c172e08-48c5-42c5-8b95-2642eb14c67a")
 		(property "Reference" "R6"
-			(at 313.436 97.79 90)
+			(at 302.514 111.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9179,7 +9546,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 315.976 97.79 90)
+			(at 299.974 111.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9187,7 +9554,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 309.372 97.79 90)
+			(at 306.578 111.76 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9196,7 +9563,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9205,7 +9572,7 @@
 			)
 		)
 		(property "Description" "10kΩ ±10%, 0.1W, 0805"
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9214,7 +9581,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9223,7 +9590,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9232,7 +9599,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9241,7 +9608,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9250,7 +9617,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9259,7 +9626,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9268,7 +9635,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9277,7 +9644,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9286,7 +9653,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9295,7 +9662,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9304,7 +9671,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9313,7 +9680,7 @@
 			)
 		)
 		(property "LCSC Part #" "C17414"
-			(at 311.15 97.79 0)
+			(at 304.8 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9331,6 +9698,83 @@
 			(project "heating_fan_atom_lite_smd"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:SMD1812B260TF_16")
+		(at 57.15 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33af6825-787b-44b4-86be-95e5402aa109")
+		(property "Reference" "F1"
+			(at 57.15 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SMD1812B260TF/16"
+			(at 57.15 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:F1812"
+			(at 57.15 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Others_Brightking-Elec-TAIWAN-SMD1812B260TF-16_C269148.html"
+			(at 57.15 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 57.15 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C269148"
+			(at 57.15 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6562edba-8232-44bd-9727-ae3dcded88f6")
+		)
+		(pin "1"
+			(uuid "511c7b72-6660-40b8-8f95-0dc7001e8ca6")
+		)
+		(instances
+			(project ""
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "F1")
 					(unit 1)
 				)
 			)
@@ -10495,7 +10939,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 311.15 88.9 180)
+		(at 304.8 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10504,7 +10948,7 @@
 		(fields_autoplaced yes)
 		(uuid "46dba8cb-6621-4fec-9713-c36a48ea1abe")
 		(property "Reference" "#PWR034"
-			(at 311.15 82.55 0)
+			(at 304.8 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10513,7 +10957,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 311.15 83.82 0)
+			(at 304.8 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10521,7 +10965,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 311.15 88.9 0)
+			(at 304.8 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10530,7 +10974,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 311.15 88.9 0)
+			(at 304.8 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10539,7 +10983,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 311.15 88.9 0)
+			(at 304.8 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10620,6 +11064,83 @@
 			(project "heating_fan_atom_lite_smd"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "#PWR037")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:BAT54WS_C7502694")
+		(at 46.99 195.58 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4aa55662-97d5-49d9-9254-38c1c8b2800b")
+		(property "Reference" "D2"
+			(at 46.99 189.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAT54WS_C7502694"
+			(at 46.99 191.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:SOD-323_L1.7-W1.3-LS2.6-RD-1"
+			(at 46.99 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 46.99 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C7502694"
+			(at 46.99 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "edf8b2c5-1788-40c8-9a95-5e2fca82688e")
+		)
+		(pin "2"
+			(uuid "040273a2-630f-4f71-9e49-52904053ccf3")
+		)
+		(instances
+			(project ""
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -10752,6 +11273,83 @@
 			(project "heating_fan_atom_lite"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:BAT54WS_C7502694")
+		(at 45.72 158.75 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "502c82c9-1354-411a-83d3-96fe24593333")
+		(property "Reference" "D1"
+			(at 45.72 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BAT54WS_C7502694"
+			(at 45.72 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:SOD-323_L1.7-W1.3-LS2.6-RD-1"
+			(at 45.72 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 45.72 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C7502694"
+			(at 45.72 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d223bf47-2f15-437f-b290-413a94142345")
+		)
+		(pin "1"
+			(uuid "43c0cf01-716b-4d8f-a30e-41840872c815")
+		)
+		(instances
+			(project ""
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -12395,101 +12993,6 @@
 			(project "heating_fan_atom_lite"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "#PWR016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N4148W")
-		(at 45.72 158.75 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7d904109-90d1-4dff-8e23-f344ab4b5c4a")
-		(property "Reference" "D2"
-			(at 45.72 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N4148W"
-			(at 45.72 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 45.72 154.305 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "75V 0.15A Fast Switching Diode, SOD-123"
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" " C81598 "
-			(at 45.72 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b0cfd864-5139-4893-a486-d1d33b0a3a2c")
-		)
-		(pin "1"
-			(uuid "09096fc2-0510-4582-9429-d6d315426d33")
-		)
-		(instances
-			(project ""
-				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
-					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -14367,6 +14870,85 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:SMF14CA_C1851346")
+		(at 50.8 50.8 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a38a94e8-18b6-4b8d-9994-46a25b9bacba")
+		(property "Reference" "D5"
+			(at 53.34 49.5299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "SMF14CA_C1851346"
+			(at 53.34 52.0699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:SOD-123_L2.8-W1.8-LS3.7-BI"
+			(at 43.18 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C41411783"
+			(at 40.64 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "467854bd-5940-4df3-ab7d-1de2ee4025a7")
+		)
+		(pin "2"
+			(uuid "c3ab2c72-5bcb-4707-9943-c5a4e9db80dc")
+		)
+		(instances
+			(project ""
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "D5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+3.3V")
 		(at 194.31 88.9 0)
 		(unit 1)
@@ -15436,6 +16018,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 50.8 60.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bde6990e-ca50-421f-8bbb-191dac8f895c")
+		(property "Reference" "#PWR044"
+			(at 50.8 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e3367be7-0442-47bc-a4f9-86f4c7552f02")
+		)
+		(instances
+			(project "openradfan"
+				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "Fan_CPU_4pin_2")
 		(lib_id "Motor:Fan_CPU_4pin")
 		(at 204.47 195.58 0)
@@ -15756,101 +16404,6 @@
 			(project "heating_fan_atom_lite_smd_v2"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "#PWR042")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Diode:1N4148W")
-		(at 45.72 195.58 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c92878c7-6ec2-424a-9304-f952988e1b9e")
-		(property "Reference" "D1"
-			(at 45.72 189.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1N4148W"
-			(at 45.72 191.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
-			(at 45.72 191.135 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.vishay.com/docs/85748/1n4148w.pdf"
-			(at 45.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "75V 0.15A Fast Switching Diode, SOD-123"
-			(at 45.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 45.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 45.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part #" " C81598 "
-			(at 45.72 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cb739adf-16a7-42ee-bc9d-a9e2d4d2bbd0")
-		)
-		(pin "1"
-			(uuid "5c16efb3-2b85-49c9-a924-d727783c6691")
-		)
-		(instances
-			(project "heating_fan_atom_lite_smd"
-				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
-					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -16721,7 +17274,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74AHCT125")
-		(at 318.77 106.68 0)
+		(at 312.42 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -16729,7 +17282,7 @@
 		(dnp no)
 		(uuid "dbc0a7b1-e7f9-465c-8354-6830432fd24c")
 		(property "Reference" "U1"
-			(at 318.77 97.79 0)
+			(at 312.42 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16737,7 +17290,7 @@
 			)
 		)
 		(property "Value" "74AHCT125"
-			(at 318.77 100.33 0)
+			(at 312.42 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16745,7 +17298,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16754,7 +17307,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf"
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16763,7 +17316,7 @@
 			)
 		)
 		(property "Description" "Quadruple Bus Buffer Gates With 3-State Outputs"
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16772,7 +17325,7 @@
 			)
 		)
 		(property "MPN" "SN74AHCT125N"
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16781,7 +17334,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16790,7 +17343,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16799,7 +17352,7 @@
 			)
 		)
 		(property "Description_1" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16808,7 +17361,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16817,7 +17370,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16826,7 +17379,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16835,7 +17388,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16844,7 +17397,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16853,7 +17406,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16862,7 +17415,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16871,7 +17424,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16880,7 +17433,7 @@
 			)
 		)
 		(property "LCSC Part #" "C352957"
-			(at 318.77 106.68 0)
+			(at 312.42 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17307,85 +17860,6 @@
 			(project "heating_fan_atom_lite_highside_sw"
 				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "easyeda2kicad:MM3Z10VT1G")
-		(at 92.71 45.72 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e92c8704-b4df-454a-8428-977b46359aad")
-		(property "Reference" "D4"
-			(at 96.52 43.8149 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MM3Z10VT1G"
-			(at 96.52 46.3549 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:SOD-323_L1.8-W1.3-LS2.5-RD"
-			(at 85.09 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Zener-Diodes_ON_MM3Z10VT1G_MM3Z10VT1G_C39057.html"
-			(at 82.55 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 92.71 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C39057"
-			(at 80.01 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d25bafa6-b5f4-4052-976a-c80e1cdbb670")
-		)
-		(pin "1"
-			(uuid "37bf91c7-7c1a-4820-9251-3308dc0812db")
-		)
-		(instances
-			(project "heating_fan_atom_lite_smd_v2"
-				(path "/70f622a8-9e5e-4fa6-8715-c6a6348e322f"
-					(reference "D4")
 					(unit 1)
 				)
 			)
