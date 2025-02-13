@@ -144,6 +144,13 @@ time:
     id: sntp_time
     timezone: ${time_zone}
 
+# I2C for externally connected Sensors on Grove port
+i2c:
+  sda: 26
+  scl: 32
+  scan: True
+  id: i2c_bus_a    
+
 ### Main control logic starts here ###
 ### Fan PWM control & RPM measurements ###
 
@@ -254,6 +261,40 @@ sensor:
       - sliding_window_moving_average:
           window_size: 10
           send_every: 10
+
+  # Code for SCD40 CO2 Sensor. Uncomment if you use one
+  # - platform: scd4x
+  #   id: scd41
+  #   i2c_id: i2c_bus_a
+  #   co2:
+  #       name: "SCD4x CO2"
+  #       id: co2
+  #   temperature:
+  #       name: "SCD4x Temperature"
+  #       id: scd4x_temperature
+  #   humidity:
+  #       name: "SCD4x Humidity"
+  #       id: scd4x_humidity
+  #   automatic_self_calibration: false
+  #   measurement_mode: periodic
+  #   update_interval: 30s
+  #   temperature_offset: 0
+
+# Button definitions to calibrate/reset SCD4x CO2 sensors
+# uncomment if SCD4x is used
+# button:
+#   - platform: template
+#     name: CO2 Calibration
+#     on_press:
+#       then:
+#         - scd4x.perform_forced_calibration:
+#             value: 419
+#             id: scd41
+#   - platform: template
+#     name: SCD4x Reset
+#     on_press:
+#       then:
+#         - scd4x.factory_reset: scd41
 
 # Define the temperature curve variables (number)
 number:
