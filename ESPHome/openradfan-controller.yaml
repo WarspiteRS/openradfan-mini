@@ -104,16 +104,19 @@ esp32:
   framework:
     type: arduino
 
+# DEACTIVATED TO PREVENT AUTOREBOOT W/O HA
 # This should point to the public location of this yaml file.
-dashboard_import:
-  package_import_url: github://andrekuehne/openradfan/ESPHome/openradfan-controller.yaml@main
-  import_full_config: true
+#dashboard_import:
+#  package_import_url: github://andrekuehne/openradfan/ESPHome/openradfan-controller.yaml@main
+#  import_full_config: true
 
 # To be able to get logs from the device via serial and api.
 logger:
+  level: DEBUG
 
+# DEACTIVATED TO PREVENT AUTOREBOOT W/O HA
 # API is a requirement of the dashboard import.
-api:
+#api:
 
 # OTA is required for Over-the-Air updating
 ota:
@@ -170,7 +173,7 @@ switch:
   - platform: template
     name: "Auto Fan Curve Control"
     id: fan_curve_control
-    restore_mode: "ALWAYS_OFF" # "RESTORE_DEFAULT_ON" - left off for now
+    restore_mode: "RESTORE_DEFAULT_ON" # "ALWAYS_OFF"
     optimistic: true
 
 
@@ -199,7 +202,7 @@ fan:
     output: fan_speed_1
     id: fan_1
     name: "Fan Speed"
-    restore_mode: ALWAYS_OFF
+    restore_mode: "RESTORE_DEFAULT_ON" #ALWAYS_OFF
     on_turn_on:
       then:
         - switch.turn_on: fan_power
@@ -216,11 +219,15 @@ fan:
     output: fan_speed_2
     id: fan_2
     name: "Fan Speed"
-    restore_mode: ALWAYS_OFF
+    restore_mode: "RESTORE_DEFAULT_ON" #ALWAYS_OFF
     internal: true 
 
 # Sensor definitions
 sensor:
+  # Measure uptime
+  - platform: uptime
+    type: seconds
+    name: Uptime Sensor
   # Pulse counters for fan speed detection
   - platform: pulse_counter
     pin: 
@@ -437,3 +444,13 @@ interval:
               // Fan 2 will turn off automatically as it is linked to Fan 1
             }
           }
+
+debug:
+  update_interval: 5s
+  
+text_sensor:
+  - platform: debug
+    device:
+      name: "Device Info"
+    reset_reason:
+      name: "Reset Reason"
