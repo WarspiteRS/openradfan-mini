@@ -268,7 +268,17 @@ sensor:
       - sliding_window_moving_average:
           window_size: 10
           send_every: 10
-
+  - platform: debug
+    free:
+      name: "Heap Free"
+    fragmentation:
+      name: "Heap Fragmentation"
+    block:
+      name: "Heap Max Block"
+    loop_time:
+      name: "Loop Time"
+    psram:
+      name: "Free PSRAM"
   # Code for SCD40 CO2 Sensor. Uncomment if you use one
   # - platform: scd4x
   #   id: scd41
@@ -454,13 +464,3 @@ text_sensor:
       name: "Device Info"
     reset_reason:
       name: "Reset Reason"
-    free:
-      name: "Heap Free"
-    fragmentation:
-      name: "Heap Fragmentation"
-    block:
-      name: "Heap Max Block"
-    loop_time:
-      name: "Loop Time"
-    psram:
-      name: "Free PSRAM"
