@@ -454,3 +454,13 @@ text_sensor:
       name: "Device Info"
     reset_reason:
       name: "Reset Reason"
+    free:
+      name: "Heap Free"
+    fragmentation:
+      name: "Heap Fragmentation"
+    block:
+      name: "Heap Max Block"
+    loop_time:
+      name: "Loop Time"
+    psram:
+      name: "Free PSRAM"
