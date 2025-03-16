@@ -18,7 +18,7 @@ esphome:
   name_add_mac_suffix: true
   project:
     name: esphome.openradfan-controller
-    version: "1.1"
+    version: "1.2.a.2"
   on_boot:
     then:
       # These functions calculate the current Fan Curve Speed and also enforce constraints on the inputs,
@@ -100,11 +100,10 @@ esphome:
 
 # ESP32 platform to use
 esp32:
-  board: esp32dev
+  board: m5stack-atom
   framework:
-    type: arduino
+    type: esp-idf
 
-# DEACTIVATED TO PREVENT AUTOREBOOT W/O HA
 # This should point to the public location of this yaml file.
 #dashboard_import:
 #  package_import_url: github://andrekuehne/openradfan/ESPHome/openradfan-controller.yaml@main
@@ -113,8 +112,6 @@ esp32:
 # To be able to get logs from the device via serial and api.
 logger:
   level: DEBUG
-
-# DEACTIVATED TO PREVENT AUTOREBOOT W/O HA
 # API is a requirement of the dashboard import.
 #api:
 
@@ -148,11 +145,11 @@ time:
     timezone: ${time_zone}
 
 # I2C for externally connected Sensors on Grove port
-i2c:
-  sda: 26
-  scl: 32
-  scan: True
-  id: i2c_bus_a    
+# i2c:
+#   sda: 26
+#   scl: 32
+#   scan: True
+#   id: i2c_bus_a    
 
 ### Main control logic starts here ###
 ### Fan PWM control & RPM measurements ###
@@ -255,30 +252,23 @@ sensor:
   # Temperature sensor. If more than 1 is connected,
   # their unique device IDs need to be provided
   - platform: dallas_temp
-    update_interval: 1s
+    update_interval: 10s
     name: "Temperature 1"
     id: temperature_ds18b20_1
     unit_of_measurement: "°C"
     device_class: temperature
     state_class: measurement
     #address: 0xputyouraddresshere
-    accuracy_decimals: 3
+    accuracy_decimals: 2
     resolution: 12
-    filters:
-      - sliding_window_moving_average:
-          window_size: 10
-          send_every: 10
   - platform: debug
     free:
       name: "Heap Free"
-    fragmentation:
-      name: "Heap Fragmentation"
     block:
       name: "Heap Max Block"
     loop_time:
       name: "Loop Time"
-    psram:
-      name: "Free PSRAM"
+
   # Code for SCD40 CO2 Sensor. Uncomment if you use one
   # - platform: scd4x
   #   id: scd41
@@ -321,6 +311,7 @@ number:
     optimistic: true
     min_value: ${control_temp_min}
     max_value: ${control_temp_max}
+    restore_value: true
     step: 1
     set_action:
       then:
@@ -346,6 +337,7 @@ number:
     optimistic: true
     min_value: ${control_temp_min}
     max_value: ${control_temp_max}
+    restore_value: true
     step: 1
     set_action:
       then:
@@ -358,6 +350,7 @@ number:
     optimistic: true
     min_value: ${control_temp_min}
     max_value: ${control_temp_max}
+    restore_value: true
     step: 1
     set_action:
       then:
@@ -370,6 +363,7 @@ number:
     optimistic: true
     min_value: ${control_temp_min}
     max_value: ${control_temp_max}
+    restore_value: true
     step: 1
     set_action:
       then:
@@ -423,7 +417,7 @@ number:
     max_value: 100
     step: 1
     optimistic: true
-    restore_value: false
+    restore_value: true
     internal: True
 
 # Update fan curve regularly
@@ -457,7 +451,7 @@ interval:
 
 debug:
   update_interval: 5s
-  
+
 text_sensor:
   - platform: debug
     device:
