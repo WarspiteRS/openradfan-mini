@@ -135,6 +135,7 @@ esp32_improv:
 
 # Web server to allow control also without Home Assistant
 web_server:
+  version: 3
   port: 80
 
 # Time sync without Home Assistant
