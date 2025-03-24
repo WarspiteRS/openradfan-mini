@@ -1,0 +1,12 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# ESPHome
+.esphome/
+*.bin
+release_binaries/
+
+# Lock/Build
+uv.lock

@@ -23,6 +23,11 @@ Get-Content $inputFile | ForEach-Object {
             "# $line"
         }
     }
+    elseif ($line -match '^\s*name:\s*"\$\{device_name\}"') {
+        # Modify name line
+        $line -replace '("\$\{device_name\}")', '"${device_name}-standalone"'
+
+    }
     else {
         $line
     }
