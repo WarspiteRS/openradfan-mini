@@ -1,9 +1,9 @@
 # OpenRadFan
 An ESPHome-driven smart controller for 12V PWM fans.
 
-Classical radiators (K2/K3) typically require relatively high flow temperatures to heat up a room. Using forced convection can significally enhance their efficiency, especially at low flow temperatures. While there are a number of commercial solutions available, these did not need my needs. They are either too loud while running or switching on/off using a relais, don't properly switch at low flow temperatures, are too expensive or simply not powerful enough. Hence, I set out to build my own solution using standard 120/140mm PWM-capable PC fans. High-end fans run at low speeds (<500 RMP) are essentially inaudible and provide a definite boost to the room temperature. Being able to smartly control the fan speed and integrate them into Home Assistant - while not a must - is definitely very nice to have if you want to control fan speed based on time of day, current room temperature or room occupancy. The fans can even be used as a kind of thermostat to modulate room temperature without restricting flow to the radiators, which is especially crucial when using a heat pump that perform best with an open loop circulation and no TRVs.
+Classical radiators (K2/K3) typically require relatively high flow temperatures to heat up a room. Using forced convection can significally enhance their efficiency, especially at low flow temperatures. While there are a number of commercial solutions available, these did not need my needs. They are either too loud while running or switching on/off using a relays, don't properly switch at low flow temperatures, are too expensive or simply not powerful enough. Hence, I set out to build my own solution using standard 120/140mm PWM-capable PC fans. High-end fans run at low speeds (<500 RPM) are essentially inaudible and provide a definite boost to the room temperature. Being able to smartly control the fan speed and integrate them into Home Assistant - while not a must - is definitely very nice to have if you want to control fan speed based on time of day, current room temperature or room occupancy. The fans can even be used as a kind of thermostat to modulate room temperature without restricting flow to the radiators, which is especially crucial when using a heat pump that perform best with an open loop circulation and no TRVs.
 
-Using these device throughout our house, we can run out heat pump at flow temperatures typically reserved for good underfloor heating setups (Vaillant heat curve at 0.25 - 30°C flow temperature at 0°C, 35°C flow temperature at -10°C).
+Using these devices throughout our house, we can run out heat pump at flow temperatures typically reserved for good underfloor heating setups (Vaillant heat curve at 0.25 - 30°C flow temperature at 0°C, 35°C flow temperature at -10°C).
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cd845684-3123-46c8-9f42-816dddf3bfc0" width="400">
@@ -12,11 +12,11 @@ Using these device throughout our house, we can run out heat pump at flow temper
 ## Features
 ### Hardware
 - M5Stack Atom Lite / Atom Lite S3 pluggable µC with usable Grove port for arbitrary I2C device support
-- 8 fan connectors in 2x4 rows
-- Each row can be individually PWM controlled (this is not enabled by default)
-- RPM measurement for the first fan in each row
+- 2 fan connectors
+  - Each can be individually PWM controlled (this is not enabled by default)
+  - RPM measurement for each
 - Global on/off switch for fans that don't support zero output at zero PWM
-- Plug-in connectors for two DS18B20-compatible temperature sensors
+- Plug-in connector for a DS18B20-compatible temperature sensor
 - Power supply: 12V barrel jack (2.1/2.5 mm), center positive
 - Reverse voltage & transient overvoltage protection, 2.5 A resettable fuse
 ### Software
@@ -28,7 +28,7 @@ Using these device throughout our house, we can run out heat pump at flow temper
 ## Set-up instructions
 **Don't connect to USB when the Atom lite is plugged into the PCB - there is no mechanism to block voltages between the included buck converter and the computer.**
 1. Compile & flash ESPHome firmware on the Atom Lite using USB. Skip this step if you have a pre-flashed controller. The ESPHome directory on GitHub contains the yaml as well as factory & ota images so you can directly flash this without a local ESPHome compiler set up.
-2. Connect DS18B20 to the push-in terminal blocks. The wire designations are marked on the PCB and are (from left to right): +3.3V, Data, GND. It's easiest to insert them all at the same time. Hold the wires in one hand in the correct order and insert them into the terminal. Then push all orange levers down at the same time and push the wires down as far as possible. The levers should almost return to the initial position and not be stuck halfway down. If you want to use more than one sensor, you need to manually edit the ESPHome yaml and include the individual IDs of the DS18B20s.
+2. Connect DS18B20 to the push-in terminal block. The wire designations are marked on the PCB and are (from left to right): +3.3V, Data, GND. It's easiest to insert them all at the same time. Hold the wires in one hand in the correct order and insert them into the terminal. Then push all orange levers down at the same time and push the wires down as far as possible. The levers should almost return to the initial position and not be stuck halfway down.
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6230d223-b83f-4b30-ab6f-a8feb23dc519" width="300">
 </p>
