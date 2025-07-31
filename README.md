@@ -12,11 +12,11 @@ Using these devices throughout our house, we can run out heat pump at flow tempe
 ## Features
 ### Hardware
 - M5Stack Atom Lite / Atom Lite S3 pluggable µC with usable Grove port for arbitrary I2C device support
-- 8 fan connectors in 2x4 rows [Mini has 2 fan connectors in 2x1 rows]
+- 8 fan connectors in 2x4 rows *[OpenRadFan-mini only has 2 fan connectors in 2x1 rows]*
 - Each row can be individually PWM controlled (this is not enabled by default)
-- RPM measurement for the first fan in each row [Mini only has one fan in each row]
+- RPM measurement for the first fan in each row *[OpenRadFan-mini only has one fan in each row]*
 - Global on/off switch for fans that don't support zero output at zero PWM
-- Plug-in connector for two DS18B20-compatible temperature sensors [Mini only has one temperature sensor]
+- Plug-in connector for two DS18B20-compatible temperature sensors *[OpenRadFan-mini only has one temperature sensor]*
 - Power supply: 12V barrel jack (2.1/2.5 mm), center positive
 - Reverse voltage & transient overvoltage protection, 2.5 A resettable fuse
 ### Software
