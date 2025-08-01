@@ -672,7 +672,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "gerber/",
+      "plot": "openradfan-gerber/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "heating_fan_atom_lite.step",
